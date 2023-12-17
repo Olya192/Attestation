@@ -62,7 +62,9 @@ export const Container = () => {
             setSearchValue(event.target.value);
           }}
         />
-        <S.InputButton data-testid="button" onClick={userCards}>Найти</S.InputButton>
+        <S.InputButton data-testid="button" onClick={userCards}>
+          Найти
+        </S.InputButton>
       </S.MainTop>
       <p style={{ display: loading ? "block" : "none" }}>Поиск...</p>
       <p style={{ display: usersInfo.total_count !== 0 ? "none" : "block" }}>
@@ -79,14 +81,8 @@ export const Container = () => {
           <Users data-testid="users" key={index} user={user} />
         ))}
         {usersInfo && (
-          <div>
-            <button 
-              onClick={() => choicePage(-1)}
-              style={{ visibility: page !== 1 ? "visible" : "hidden" }}
-            >
-              Назад
-            </button>
-            <button
+          <S.PagBlock>
+            <S.PagButton
               onClick={() => choicePage(1)}
               style={{
                 visibility:
@@ -97,8 +93,14 @@ export const Container = () => {
             >
               {" "}
               Вперед
-            </button>
-          </div>
+            </S.PagButton>
+            <S.PagButton
+              onClick={() => choicePage(-1)}
+              style={{ visibility: page !== 1 ? "visible" : "hidden" }}
+            >
+              Назад
+            </S.PagButton>
+          </S.PagBlock>
         )}
       </div>
     </S.Main>

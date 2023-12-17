@@ -33,6 +33,9 @@ export const Users = ({ user }) => {
       <S.UserData>
         <S.UserImg src={user.avatar_url} />
         <p>{user.login}</p>
+        <p style={{ display: loading ? "block" : "none" }}>
+          Загружаю информацию...
+        </p>
       </S.UserData>
       <div style={{ display: accordion ? "block" : "none" }}>
         <p style={{ display: loading ? "block" : "none" }}>

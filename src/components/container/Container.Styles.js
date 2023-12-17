@@ -52,3 +52,25 @@ export const SortText = styled.div`
   display: flex;
   gap: 10px;
 `;
+
+export const PagBlock = styled.div`
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 10px;
+`;
+
+export const PagButton = styled.button`
+  width: 80px;
+  background-color: #000;
+  border: 1px solid #000;
+  border-radius: 6px;
+  font-size: 12px;
+  line-height: 24px;
+  color: #fff;
+  &:hover {
+    background-color: #fff;
+    color: #000;
+  }
+`;
