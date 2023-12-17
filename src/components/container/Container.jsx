@@ -86,7 +86,7 @@ export const Container = () => {
               onClick={() => choicePage(1)}
               style={{
                 visibility:
-                  page === Math.round(usersInfo.total_count / 10)
+                  page === Math.round(usersInfo.total_count / 10) && page < 10
                     ? "hidden"
                     : "visible",
               }}
